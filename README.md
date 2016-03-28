@@ -6,8 +6,7 @@ Submitted by: Dang Kim Khanh
 
 Time spent: 14 hours
 
-URL: **Insert your Heroku URL here**
-
+URL: https://fathomless-chamber-54585.herokuapp.com
 
 ## User Stories
 
