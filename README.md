@@ -26,9 +26,9 @@ The following **required** functionality is complete:
 #### Tickets
 
 * [x] Each event can have multiple types of tickets, each with a different `price` and `max_quantity`.
-* [ ] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
-* [ ] Users cannot buy more tickets than the quantity available.
-* [ ] Users can only buy up to 10 of a ticket type at a time.
+* [x] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
+* [x] Users cannot buy more tickets than the quantity available.
+* [x] Users can only buy up to 10 of a ticket type at a time.
 * [ ] Users cannot buy tickets to events that occur in the past.
 
 #### Users
@@ -57,9 +57,11 @@ The following **required** functionality is complete:
 
 Describe any challenges encountered while building the app.
 
+I can't get view rspec to work.
+
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2016] [Dang Kim Khanh]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

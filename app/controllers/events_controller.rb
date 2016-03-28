@@ -7,12 +7,7 @@ class EventsController < ApplicationController
 	end
 
 	def index
-		if params[:search]
-			@events = Event.search(params[:search]).where("starts_at > ?", DateTime.now)
-		else
-			@events = Event.where("starts_at > ?", DateTime.now)
-
-		end
+		params[:search] ? @events = Event.search(params[:search]).where("starts_at > ?", DateTime.now).where(published: true) : @events = Event.where("starts_at > ?", DateTime.now).where(published: true)
 	end
 
 	def create
