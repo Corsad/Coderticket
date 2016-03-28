@@ -1,0 +1,68 @@
+<h1>Create new Event</h1>
+
+<% if !@venues.blank? %>
+	<% if  !@categories.blank?%>
+
+		<%= form_for(@event) do |f| %>
+		<table>
+			<tr>
+				<td>	<%= f.label :name %></td>
+				<td>	<%= f.text_field :name , class:"form-control"%></td>
+			</tr>
+			<tr>
+				<td><%= f.label :starts_at %></td>
+				<td><%= f.datetime_field :starts_at, class:"form-control datetimepicker"%></td>
+			</tr>
+			<tr>
+				<td>	<%= f.label :ends_at %></td>
+				<td>	<%= f.text_field :ends_at, class:"form-control datetimepicker"%></td>
+			</tr>
+			<tr>
+				<td>	<%= f.label :hero_image_url %></td>
+				<td><%= f.text_field :hero_image_url, class:"form-control" %></td>
+			</tr>
+			<tr>
+				<td>	<%= f.label :extended_html_description %></td>
+				<td>	<%= f.text_field :extended_html_description, class:"form-control" %></td>
+			</tr>
+			<tr>
+				<td><%= f.label "Select venue: " %></td>
+				<td><%= select_tag "venue_id", options_from_collection_for_select(@venues, "id", "name"), class:"form-control" %></td>
+			</tr>
+			<tr>
+				<td><%= f.label "Select Category: " %></td>
+				<td><%= select_tag "category_id", options_from_collection_for_select(@categories, "id", "name"), class:"form-control" %></td>
+			</tr>
+		</table>
+
+		<p>Add one Ticket Type</p>
+		<%= f.fields_for :ticket_types do |ff| %>
+		<table>
+			<tr>
+				<td>	<%= ff.label :name %></td>
+				<td>	<%= ff.text_field :name , class:"form-control"%></td>
+			</tr>
+
+			<tr>
+				<td>	<%= ff.label :price %></td>
+				<td>	<%= ff.text_field :price , class:"form-control"%></td>
+			</tr>
+
+			<tr>
+				<td>	<%= ff.label :max_quantity %></td>
+				<td>	<%= ff.text_field :max_quantity , class:"form-control"%></td>
+			</tr>
+		</table>
+		<% end %>
+
+		<%= f.submit %>
+
+		<% end %>
+
+	<% else %>
+		There is no category
+	<% end %>
+
+<% else %>
+	There is no venues
+<% end %>

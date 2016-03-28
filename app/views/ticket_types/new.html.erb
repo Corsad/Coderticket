@@ -1,0 +1,21 @@
+<h1>Create new Ticket</h1>
+
+<%= form_for [@event, TicketType.new] do |f| %>
+<table>
+	<tr>
+		<td><%= f.label :name %></td>
+		<td><%= f.text_field :name %></td>
+	</tr>
+	<tr>
+		<td>	<%= f.label :price %></td>
+		<td>	<%= f.text_field :price %></td>
+	</tr>
+	<tr>
+		<td>	<%= f.label :max_quantity %>
+		</td>
+		<td>	<%= f.password_field :max_quantity %>
+		</td>
+	</tr>
+</table>
+<%= f.submit %>
+<% end %>

@@ -1,0 +1,9 @@
+<h1>User Info</h1>
+
+<% if !@events.blank? %>
+  <% for item in @events %>
+	<%= render partial: 'card', locals: {event: item} %>
+  <% end %>
+<% else %>
+  You haven't make any event
+<% end %>

@@ -1,0 +1,20 @@
+<h1>Create Venue</h1>
+
+<%= form_for @venue do |f| %>
+<table>
+	<tr>
+		<td><%= f.label :name %></td>
+		<td><%= f.text_field :name %></td>
+	</tr>
+	<tr>
+		<td>	<%= f.label :full_address %></td>
+		<td>	<%= f.text_field :full_address %></td>
+	</tr>
+	<tr>
+		<td>	<%= f.label :region_id %>
+		</td>
+		<td><%= select_tag "region_id", options_from_collection_for_select(@regions, "id", "name"), class:"form-control" %></td>
+	</tr>
+</table>
+<%= f.submit %>
+<% end %>

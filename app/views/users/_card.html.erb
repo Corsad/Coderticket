@@ -1,0 +1,20 @@
+<div class="col-md-6">
+	<div class="card">
+		<div class="card-block">
+			<h4 class="card-title"><%= link_to event.name, event_path(event) %></h4>
+			<p class="card-text">Status:
+				<% if event.published %>
+				Activate
+			</p>
+			<%= link_to "Unpublished",  event_update_status_path(event), class:"btn btn-primary" %>
+			<% else %>
+			Pending
+		</p>
+		<%= link_to "Published",  event_update_status_path(event), class:"btn btn-primary" %>
+
+		<% end %>
+			<%= link_to "Add TicketType",   new_event_ticket_type_path(event), class:"btn btn-primary" %>
+
+	</div>
+</div>
+</div>
